@@ -15,7 +15,7 @@ namespace DynDnsUpdater
             var password = args[3];
             
             var webClient = new WebClient();
-            var ip = webClient.DownloadString("http://sidoine.net/cgi-bin/ip.pl");
+            var ip = webClient.DownloadString("http://icanhazip.com/");
             ip = ip.Trim(new[] {'\r', '\n', ' '});
             string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes(userName + ":" + password));
             webClient.Headers[HttpRequestHeader.Authorization] = string.Format("Basic {0}", credentials);
